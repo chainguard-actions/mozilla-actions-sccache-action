@@ -1,0 +1,35 @@
+name: Test sccache setup with specific version
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_EVENT_NAME: push
+      GITHUB_REF: refs/heads/main
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - id: action
+        uses: .
+        with:
+          version: "v0.7.7"
+          disable_annotations: 'true'
+      - name: Assert sccache is installed
+        run: |
+          echo "Checking sccache is available in PATH..."
+          if ! command -v sccache &>/dev/null; then
+            echo "FAIL: sccache not found in PATH"
+            exit 1
+          fi
+          echo "sccache found: $(command -v sccache)"
+          echo "PASS"
+      - name: Assert sccache version matches requested
+        run: |
+          INSTALLED_VERSION=$(sccache --version | awk '{print $2}')
+          echo "Installed version: $INSTALLED_VERSION"
+          EXPECTED="0.7.7"
+          if [ "$INSTALLED_VERSION" != "$EXPECTED" ]; then
+            echo "FAIL: expected version '$EXPECTED' but got '$INSTALLED_VERSION'"
+            exit 1
+          fi
+          echo "PASS: sccache version is $INSTALLED_VERSION"

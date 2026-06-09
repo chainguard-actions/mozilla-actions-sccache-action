@@ -1,0 +1,29 @@
+name: Test basic sccache setup
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_EVENT_NAME: push
+      GITHUB_REF: refs/heads/main
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - id: action
+        uses: .
+        with:
+          disable_annotations: 'true'
+      - name: Assert sccache is installed
+        run: |
+          echo "Checking sccache is available in PATH..."
+          if ! command -v sccache &>/dev/null; then
+            echo "FAIL: sccache not found in PATH"
+            exit 1
+          fi
+          echo "sccache found: $(command -v sccache)"
+          echo "PASS"
+      - name: Assert sccache version output
+        run: |
+          echo "Checking sccache --version works..."
+          sccache --version
+          echo "PASS"

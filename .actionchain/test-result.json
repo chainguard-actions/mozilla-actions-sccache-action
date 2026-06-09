@@ -1,0 +1,7 @@
+{
+  "ran": true,
+  "passed": true,
+  "output": "\n\u003e sccache-action@0.0.10 test\n\u003e jest --passWithNoTests\n\nNo tests found, exiting with code 0\n",
+  "duration_ms": 967,
+  "exit_code": 0
+}
