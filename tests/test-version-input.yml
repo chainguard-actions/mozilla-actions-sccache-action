@@ -1,4 +1,4 @@
-name: Test basic usage (latest sccache)
+name: Test version input
 on:
   workflow_dispatch:
 jobs:
@@ -9,12 +9,18 @@ jobs:
       - id: action
         uses: .
         with:
+          version: 'v0.7.7'
           disable_annotations: 'true'
-      - name: Assert sccache is installed
+      - name: Assert sccache is installed at specified version
         run: |
           which sccache || { echo "FAIL: sccache not found in PATH"; exit 1; }
-          sccache --version
-          echo "PASS: sccache is installed"
+          VERSION_OUTPUT=$(sccache --version)
+          echo "sccache version output: $VERSION_OUTPUT"
+          if ! echo "$VERSION_OUTPUT" | grep -q "0.7.7"; then
+            echo "FAIL: expected sccache version 0.7.7, got: $VERSION_OUTPUT"
+            exit 1
+          fi
+          echo "PASS: sccache version 0.7.7 is installed"
       - name: Assert RUSTC_WRAPPER is set
         run: |
           echo "RUSTC_WRAPPER: $RUSTC_WRAPPER"
