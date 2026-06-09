@@ -1,6 +1,6 @@
 # mozilla-actions/sccache-action
 
-sccache github action
+Setup sccache action
 
 Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at [https://github.com/mozilla-actions/sccache-action](https://github.com/mozilla-actions/sccache-action).
 
