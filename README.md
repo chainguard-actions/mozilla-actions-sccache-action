@@ -8,6 +8,7 @@ Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at
 
 | Version | Tag | Upstream commit |
 |---------|-----|-----------------|
+| v0.0.10 | [`v0.0.10`](https://github.com/chainguard-actions/mozilla-actions-sccache-action/tree/v0.0.10) | [`9e7fa8a`](https://github.com/mozilla-actions/sccache-action/commit/9e7fa8a12102821edf02ca5dbea1acd0f89a2696) |
 | v0.0.9 | [`v0.0.9`](https://github.com/chainguard-actions/mozilla-actions-sccache-action/tree/v0.0.9) | — |
 
 ## Privacy
