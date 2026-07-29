@@ -1,0 +1,13 @@
+{
+  "status": "self_contained",
+  "entries": [
+    {
+      "path": "dist/setup/index.js",
+      "status": "self_contained"
+    },
+    {
+      "path": "dist/show_stats/index.js",
+      "status": "self_contained"
+    }
+  ]
+}
