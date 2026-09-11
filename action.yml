@@ -12,7 +12,6 @@ inputs:
     description: "Disable annotation generation in post-run."
     default: 'false'
 runs:
-  pre: chainguard-phonehome.js
   using: "node24"
   main: "dist/setup/index.js"
   post: "dist/show_stats/index.js"
