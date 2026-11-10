@@ -4,8 +4,13 @@
   "version": "v0.0.11",
   "commit_sha": "fc920bf0ec8de6ee65d409111f7ec508035751ba",
   "url": "https://github.com/Mozilla-Actions/sccache-action",
-  "policy_sha": "d636be7e43ef829af6e853da6b3c7566db9f72fe",
+  "policy_sha": "374911c4be584df24e6da57af2d990570ef0f859",
   "test_policy_sha": "843adf9e4b8f85d0c08b27b9d0b09dd094b54702",
   "test_agent_version": "2",
-  "harden_agent_version": "2"
+  "harden_agent_version": "2",
+  "dist_artifact": {
+    "gcs_uri": "gs://patch-actions-node-artifacts/dist-artifacts/Mozilla-Actions/sccache-action/v0.0.11/sha256-1b7e06574aac992d408be41c9e0b6b6b098434014612bce5d6232b5d4f369b1b.tar.gz",
+    "sha256": "1b7e06574aac992d408be41c9e0b6b6b098434014612bce5d6232b5d4f369b1b",
+    "size_bytes": 350088
+  }
 }
