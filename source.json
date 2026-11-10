@@ -1,11 +1,16 @@
 {
-  "owner": "mozilla-actions",
+  "owner": "Mozilla-Actions",
   "repo": "sccache-action",
   "version": "v0.0.10",
   "commit_sha": "9e7fa8a12102821edf02ca5dbea1acd0f89a2696",
-  "url": "https://github.com/mozilla-actions/sccache-action",
-  "policy_sha": "d636be7e43ef829af6e853da6b3c7566db9f72fe",
+  "url": "https://github.com/Mozilla-Actions/sccache-action",
+  "policy_sha": "374911c4be584df24e6da57af2d990570ef0f859",
   "test_policy_sha": "843adf9e4b8f85d0c08b27b9d0b09dd094b54702",
-  "test_agent_version": "1",
-  "harden_agent_version": "1"
+  "test_agent_version": "2",
+  "harden_agent_version": "2",
+  "dist_artifact": {
+    "gcs_uri": "gs://patch-actions-node-artifacts/dist-artifacts/Mozilla-Actions/sccache-action/v0.0.10/sha256-1b7e06574aac992d408be41c9e0b6b6b098434014612bce5d6232b5d4f369b1b.tar.gz",
+    "sha256": "1b7e06574aac992d408be41c9e0b6b6b098434014612bce5d6232b5d4f369b1b",
+    "size_bytes": 350088
+  }
 }
